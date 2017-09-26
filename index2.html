@@ -17,17 +17,15 @@
             font-family: sans-serif;
             font-size: 20px;
 
-
-
         }
 
         /*.a01:hover {*/
 
-            /*height: 22px;*/
-            /*width: 22px;*/
+        /*height: 22px;*/
+        /*width: 22px;*/
 
-            /*background-color: #9696a0;*/
-            /*fill: red;*/
+        /*background-color: #9696a0;*/
+        /*fill: red;*/
         /*}*/
 
         .spot {
@@ -38,23 +36,21 @@
 
             !*display: inline-block;*!
             border-radius: 20px;*/
-            /*fill: #e0e0e0;*/
-            fill: #79e06e;
-            /*opacity: 0.4;*/
+            fill: #e0e0e0;
+            /*fill: #79e06e;*/
+            opacity: 0.4;
             transition: fill .7s ease;
         }
 
         .spot:hover {
 
-     /*       height: 22px;
-            width: 22px;
+            /*       height: 22px;
+                   width: 22px;
 
-            background-color: #9696a0;*/
+                   background-color: #9696a0;*/
             fill: #6197cd;
             opacity: 0.6;
         }
-
-
 
         h1 {
             color: blue;
@@ -63,35 +59,24 @@
         }
 
 
-
     </style>
 </head>
 <body>
 
 <svg width="300" height="400">
 
-    <rect x="0" y="0" width="300" height="400"  style="stroke: black; fill: #ffffff;"></rect>
+    <rect x="0" y="0" width="300" height="400" style="stroke: black; fill: #ffffff;"></rect>
 
-    <rect x="0" y="40" width="300" height="80"  style="stroke: none; fill: #3c91ff;"></rect>
+    <rect x="0" y="40" width="300" height="80" style="stroke: none; fill: #3c91ff;"></rect>
 
 
     <circle cx="150" cy="250" r="105" style="stroke: none; fill: #e0e0e0;"></circle>
 
     <circle cx="150" cy="250" r="5" style="stroke: none; fill: #000000;"></circle>
 
-    <text x="20" y="35" fill="black" font-family="sans-serif" font-size="20px" >Ustaw czas</text>
+    <text x="20" y="35" fill="black" font-family="sans-serif" font-size="20px">Ustaw czas</text>
 
     <text x="60" y="95" fill="white" font-family="sans-serif" font-size="40px">22:22 PM</text>
-
-
-
-
-
-
-    <!--<text class="a01" id="12" onclick="okno()" x="140" y="180"   >12</text>-->
-    <!--<text class="a01" id="3" onclick="okno()" x="220" y="250"   >3</text>-->
-    <!--<text class="a01" id="6" onclick="okno()" x="140" y="340"  >6</text>-->
-    <!--<text class="a01" id="9" onclick="okno()" x="59" y="257"   >9</text>-->
 
 
 
@@ -101,6 +86,20 @@
     <!--<circle class="spot" cx="150" cy="335" r="13" ></circle>-->
     <!--<circle class="spot" cx="150" cy="165" r="13" ></circle>-->
 
+
+
+    <text class="a01" id="12" onclick="okno()" x="137" y="171">12</text>
+    <text class="a01" id="3" onclick="okno()" x="229" y="257">3</text>
+    <text class="a01" id="4" onclick="okno()" x="218" y="300">4</text>
+    <text class="a01" id="5" onclick="okno()" x="187" y="330">5</text>
+    <text class="a01" id="6" onclick="okno()" x="144" y="343">6</text>
+    <text class="a01" id="7" onclick="okno()" x="102" y="330">7</text>
+    <text class="a01" id="8" onclick="okno()" x="70" y="300">8</text>
+    <text class="a01" id="9" onclick="okno()" x="59" y="257">9</text>
+    <text class="a01" id="10" onclick="okno()" x="65" y="215">10</text>
+    <text class="a01" id="11" onclick="okno()" x="97" y="183">11</text>
+    <text class="a01" id="1" onclick="okno()" x="187" y="183">1</text>
+    <text class="a01" id="2" onclick="okno()" x="218" y="215">2</text>
 
     /* spoty godzin *********************************************/
 
@@ -118,15 +117,6 @@
     <circle class="spot" id="11" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(330  150 250)"></circle>
 
 
-    <text class="a01" id="12" onclick="okno()" x="137" y="171"   >12</text>
-    <text class="a01" id="3" onclick="okno()" x="229" y="257"   >3</text>
-    <text class="a01" id="4" onclick="okno()" x="218" y="300"   >4</text>
-    <text class="a01" id="5" onclick="okno()" x="187" y="330"   >5</text>
-    <text class="a01" id="6" onclick="okno()" x="144" y="343"  >6</text>
-    <text class="a01" id="9" onclick="okno()" x="59" y="257"   >9</text>
-
-
-
 
 
 
@@ -138,37 +128,34 @@
     <!--<line id="podzialka" x1="50" y1="250" x2="250" y2="250" style="stroke:rgb(0,0,0);stroke-width:1 " transform="rotate( 150  150 250)"/>-->
 
 
-
-<div class="a01">
-     A
-</div>
+    <div class="a01">
+        A
+    </div>
 
 
     <p id="godzina">x</p>
 
 
+    <script>
 
-<script>
-
-    console.log("skahfgASFGAFGJKAG");
-
-
-    var i;
-    for (i = 0; i < 13; i++) {
-        console.log("--> "+ i);
-    }
+        console.log("skahfgASFGAFGJKAG");
 
 
-    function okno() {
-        var x = document.getElementById("godzina");
-        x.innerHTML = (window.event.target.id);
+        var i;
+        for (i = 0; i < 13; i++) {
+            console.log("--> " + i);
+        }
+
+
+        function okno() {
+            var x = document.getElementById("godzina");
+            x.innerHTML = (window.event.target.id);
 //    alert(event.srcElement.id);
-        console.log(window.event.target.id)
-    }
+            console.log(window.event.target.id)
+        }
 
 
-
-</script>
+    </script>
 
 </body>
 </html>
