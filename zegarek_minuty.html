@@ -3,63 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Javascript</title> <!--tytuł strony-->
-    <style type="text/css">
 
-        /*Klasa może być nadana wielu elementom, przez co np. będą miały one ujednolicony wygląd.*/
-        .a01 {
-            /*height: 22px;*/
-            /*width: 22px;*/
-            /*background-color: #c6e6c9;*/
-
-            fill: #6e6e6e;
-            /*display: inline-block;*/
-            border-radius: 20px;
-            font-family: sans-serif;
-            font-size: 20px;
-
-        }
-
-        /*.a01:hover {*/
-
-        /*height: 22px;*/
-        /*width: 22px;*/
-
-        /*background-color: #9696a0;*/
-        /*fill: red;*/
-        /*}*/
-
-        .spot {
-            /*height: 22px;
-            width: 22px;
-            background-color: #c6e6c9;
+    <link rel="stylesheet" href="index.css">
 
 
-            !*display: inline-block;*!
-            border-radius: 20px;*/
-            /*fill: #e0e0e0;*/
-            fill: #79e06e;
-            /*opacity: 0.4;*/
-            transition: fill .7s ease;
-        }
 
-        .spot:hover {
-
-            /*       height: 22px;
-                   width: 22px;
-
-                   background-color: #9696a0;*/
-            fill: #6197cd;
-            opacity: 0.6;
-        }
-
-        h1 {
-            color: blue;
-            font-family: verdana;
-            font-size: 100%;
-        }
-
-
-    </style>
 </head>
 <body>
 
@@ -193,23 +141,15 @@
 
 
 
-    <div class="a01">
-        A
-    </div>
 
 
-    <p id="godzina">x</p>
+
+    <p>aktualna minuta</p>
+    <p id="aktualnaMinuta">minuta</p>
 
 
     <script>
 
-        console.log("skahfgASFGAFGJKAG");
-
-
-        var i;
-        for (i = 0; i < 13; i++) {
-            console.log("--> " + i);
-        }
 
 
         function okno() {

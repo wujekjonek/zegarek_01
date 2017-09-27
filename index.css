@@ -33,14 +33,14 @@
     /*fill: #e0e0e0;*/
     fill: #6197cd;
     opacity: 0.6;
-    transition: fill .7s ease;
+    /*transition: fill .7s ease;*/
 }
 
 .spot {
     fill: #e0e0e0;
     /*fill: #79e06e;*/
     opacity: 0.4;
-    transition: fill .7s ease;
+    /*transition: fill .7s ease;*/
 }
 
 .spot:hover {
@@ -53,7 +53,7 @@
     stroke: #6197cd;
     /*stroke: #79e06e;*/
     /*opacity: 0.4;*/
-    transition: fill .7s ease;
+    /*transition: fill .7s ease;*/
     stroke-width: 2px;
 }
 
