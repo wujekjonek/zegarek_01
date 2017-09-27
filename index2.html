@@ -1,3 +1,6 @@
+<!--  http://www.jqueryscript.net/demo/Material-Time-Picker-Plugin-jQuery-MDTimePicker/   -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,55 +10,70 @@
 
         /*Klasa może być nadana wielu elementom, przez co np. będą miały one ujednolicony wygląd.*/
         .a01 {
-            /*height: 22px;*/
-            /*width: 22px;*/
-            /*background-color: #c6e6c9;*/
-
             fill: #6e6e6e;
             /*display: inline-block;*/
             border-radius: 20px;
             font-family: sans-serif;
             font-size: 20px;
+        }
+
+        .aktywnyspot {
+            /*fill: #e0e0e0;*/
+            fill: #6197cd;
+            opacity: 0.6;
+            transition: fill .7s ease;
 
         }
 
-        /*.a01:hover {*/
-
-        /*height: 22px;*/
-        /*width: 22px;*/
-
-        /*background-color: #9696a0;*/
-        /*fill: red;*/
-        /*}*/
-
         .spot {
-            /*height: 22px;
-            width: 22px;
-            background-color: #c6e6c9;
-
-
-            !*display: inline-block;*!
-            border-radius: 20px;*/
             fill: #e0e0e0;
             /*fill: #79e06e;*/
             opacity: 0.4;
             transition: fill .7s ease;
+
         }
 
         .spot:hover {
-
-            /*       height: 22px;
-                   width: 22px;
-
-                   background-color: #9696a0;*/
             fill: #6197cd;
             opacity: 0.6;
+        }
+
+        .line {
+
+            stroke: #6197cd;
+            /*stroke: #79e06e;*/
+            /*opacity: 0.4;*/
+            transition: fill .7s ease;
+            stroke-width: 2px;
+        }
+
+        .line2:hover {
+
+            stroke: #6197cd;
+            opacity: 0.6;
+
         }
 
         h1 {
             color: blue;
             font-family: verdana;
             font-size: 100%;
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        #circle {
+            border: 1px solid red;
+            height: 20px;
+            width: 20px;
+            -webkit-border-radius: 40px;
+            -moz-border-radius: 40px;
+            border-radius: 40px;
+
         }
 
 
@@ -66,27 +84,20 @@
 <svg width="300" height="400">
 
     <rect x="0" y="0" width="300" height="400" style="stroke: black; fill: #ffffff;"></rect>
-
     <rect x="0" y="40" width="300" height="80" style="stroke: none; fill: #3c91ff;"></rect>
-
-
-    <circle cx="150" cy="250" r="105" style="stroke: none; fill: #e0e0e0;"></circle>
-
-    <circle cx="150" cy="250" r="5" style="stroke: none; fill: #000000;"></circle>
+    <circle id="tarcza" cx="150" cy="250" r="105" style="stroke: none; fill: #e0e0e0;"></circle>
 
     <text x="20" y="35" fill="black" font-family="sans-serif" font-size="20px">Ustaw czas</text>
 
-    <text x="60" y="95" fill="white" font-family="sans-serif" font-size="40px">22:22 PM</text>
+    <text id="godzina" x="63" y="95" fill="white" font-family="sans-serif" font-size="40px">22</text>
+    <text id="" x="110" y="95" fill="white" font-family="sans-serif" font-size="40px">:</text>
+    <text id="" x="125" y="95" fill="white" font-family="sans-serif" font-size="40px">XX</text>
+    <text id="" x="190" y="95" fill="white" font-family="sans-serif" font-size="25px">PM</text>
 
 
-
-
-    <!--<circle class="spot" cx="65" cy="250" r="13" ></circle>-->
-    <!--<circle class="spot" cx="235" cy="250" r="13" ></circle>-->
-    <!--<circle class="spot" cx="150" cy="335" r="13" ></circle>-->
-    <!--<circle class="spot" cx="150" cy="165" r="13" ></circle>-->
-
-
+    /**********************************************/
+    /**************** godziny /
+    /**********************************************/
 
     <text class="a01" id="12" onclick="okno()" x="137" y="171">12</text>
     <text class="a01" id="3" onclick="okno()" x="229" y="257">3</text>
@@ -101,23 +112,23 @@
     <text class="a01" id="1" onclick="okno()" x="187" y="183">1</text>
     <text class="a01" id="2" onclick="okno()" x="218" y="215">2</text>
 
-    /* spoty godzin *********************************************/
+
+    <!--    /**********************************************/    -->
+    <!--    /**************** spoty godzin                */    -->
+    <!--    /**********************************************/    -->
 
     <circle class="spot" id="12" onclick="okno()" cx="150" cy="165" r="13" transform="rotate( 0  150 250)"></circle>
-    <circle class="spot" id="1" onclick="okno()" cx="150" cy="165" r="13" transform="rotate( 30  150 250)"></circle>
-    <circle class="spot" id="2" onclick="okno()" cx="150" cy="165" r="13" transform="rotate( 60  150 250)"></circle>
-    <circle class="spot" id="3" onclick="okno()" cx="150" cy="165" r="13" transform="rotate( 90  150 250)"></circle>
-    <circle class="spot" id="4" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(120  150 250)"></circle>
-    <circle class="spot" id="5" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(150  150 250)"></circle>
-    <circle class="spot" id="6" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(180  150 250)"></circle>
-    <circle class="spot" id="7" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(210  150 250)"></circle>
-    <circle class="spot" id="8" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(240  150 250)"></circle>
-    <circle class="spot" id="9" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(270  150 250)"></circle>
+    <circle class="spot" id="01" onclick="okno()" cx="150" cy="165" r="13" transform="rotate( 30  150 250)"></circle>
+    <circle class="spot" id="02" onclick="okno()" cx="150" cy="165" r="13" transform="rotate( 60  150 250)"></circle>
+    <circle class="spot" id="03" onclick="okno()" cx="150" cy="165" r="13" transform="rotate( 90  150 250)"></circle>
+    <circle class="spot" id="04" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(120  150 250)"></circle>
+    <circle class="spot" id="05" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(150  150 250)"></circle>
+    <circle class="spot" id="06" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(180  150 250)"></circle>
+    <circle class="spot" id="07" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(210  150 250)"></circle>
+    <circle class="spot" id="08" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(240  150 250)"></circle>
+    <circle class="spot" id="09" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(270  150 250)"></circle>
     <circle class="spot" id="10" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(300  150 250)"></circle>
     <circle class="spot" id="11" onclick="okno()" cx="150" cy="165" r="13" transform="rotate(330  150 250)"></circle>
-
-
-
 
 
     <!--<line id="podzialka" x1="50" y1="250" x2="250" y2="250" style="stroke:rgb(0,0,0);stroke-width:1 " transform="rotate( 0  150 250)"/>-->
@@ -128,32 +139,49 @@
     <!--<line id="podzialka" x1="50" y1="250" x2="250" y2="250" style="stroke:rgb(0,0,0);stroke-width:1 " transform="rotate( 150  150 250)"/>-->
 
 
-    <div class="a01">
-        A
-    </div>
+    <line class="line" id="godziny" x1="150" y1="250" x2="78" y2="250"/>
+
+    <circle class="aktywnyspot" id="godzinyspot" cx="65" cy="250" r="13"></circle>
 
 
-    <p id="godzina">x</p>
+    <circle cx="150" cy="250" r="5" style="stroke: none; fill: #6197cd;"></circle>
 
+    <p>aktualna godzina</p>
+    <p id="aktualnaGodzina">godzina</p>
+
+
+    <!--<p id="demo"></p>-->
+
+
+    <!--    /**********************************************/    -->
+    <!--    /**************** <script>                    */    -->
+    <!--    /**********************************************/    -->
 
     <script>
 
-        console.log("skahfgASFGAFGJKAG");
+        var godziny = document.getElementById("godziny");
+        var godzinyspot = document.getElementById("godzinyspot");
 
 
-        var i;
-        for (i = 0; i < 13; i++) {
-            console.log("--> " + i);
+        function ktoraGodzina() {
+            var n = new Date().getHours();
+            document.getElementById("aktualnaGodzina").innerHTML = n;
+            document.getElementById("godzina").innerHTML = n;
+            godziny.setAttribute("transform", "rotate(" + ((n * 30) + 90) + ", 150, 250)");
+            godzinyspot.setAttribute("transform", "rotate(" + ((n * 30) + 90) + ", 150, 250)");
         }
+
+
+        ktoraGodzina();
 
 
         function okno() {
             var x = document.getElementById("godzina");
             x.innerHTML = (window.event.target.id);
-//    alert(event.srcElement.id);
             console.log(window.event.target.id)
+            godzinyspot.style.display = 'none';
+            godziny.setAttribute("transform", "rotate(" + ((window.event.target.id * 30) + 90) + ", 150, 250)");
         }
-
 
     </script>
 

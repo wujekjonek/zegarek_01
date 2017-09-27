@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title> <!--tytuł strony-->
+    <style type="text/css">
+
+        /*Klasa może być nadana wielu elementom, przez co np. będą miały one ujednolicony wygląd.*/
+        .a01 {
+            /*height: 22px;*/
+            /*width: 22px;*/
+            /*background-color: #c6e6c9;*/
+
+            fill: #6e6e6e;
+            /*display: inline-block;*/
+            border-radius: 20px;
+            font-family: sans-serif;
+            font-size: 20px;
+
+        }
+
+        /*.a01:hover {*/
+
+        /*height: 22px;*/
+        /*width: 22px;*/
+
+        /*background-color: #9696a0;*/
+        /*fill: red;*/
+        /*}*/
+
+        .spot {
+            /*height: 22px;
+            width: 22px;
+            background-color: #c6e6c9;
+
+
+            !*display: inline-block;*!
+            border-radius: 20px;*/
+            /*fill: #e0e0e0;*/
+            fill: #79e06e;
+            /*opacity: 0.4;*/
+            transition: fill .7s ease;
+        }
+
+        .spot:hover {
+
+            /*       height: 22px;
+                   width: 22px;
+
+                   background-color: #9696a0;*/
+            fill: #6197cd;
+            opacity: 0.6;
+        }
+
+        h1 {
+            color: blue;
+            font-family: verdana;
+            font-size: 100%;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<svg width="300" height="400">
+
+    <rect x="0" y="0" width="300" height="400" style="stroke: black; fill: #ffffff;"></rect>
+
+    <rect x="0" y="40" width="300" height="80" style="stroke: none; fill: #3c91ff;"></rect>
+
+
+    <circle cx="150" cy="250" r="105" style="stroke: none; fill: #e0e0e0;"></circle>
+
+
+    <text x="20" y="35" fill="black" font-family="sans-serif" font-size="20px">Ustaw czas</text>
+
+    <text x="60" y="95" fill="white" font-family="sans-serif" font-size="40px">22:22 PM</text>
+
+
+    <line id="podzialka" x1="45" y1="250" x2="255" y2="250" style="stroke:#909090;stroke-width:1 "
+          transform="rotate( 0  150 250)"></line>
+    <line id="podzialka" x1="45" y1="250" x2="255" y2="250" style="stroke:#909090;stroke-width:1 "
+          transform="rotate( 30  150 250)"></line>
+
+    <line id="podzialka" x1="45" y1="250" x2="255" y2="250" style="stroke:#909090;stroke-width:1 "
+          transform="rotate( 60  150 250)"></line>
+
+    <line id="podzialka" x1="45" y1="250" x2="255" y2="250" style="stroke:#909090;stroke-width:1 "
+          transform="rotate( 90  150 250)"></line>
+
+    <line id="podzialka" x1="45" y1="250" x2="255" y2="250" style="stroke:#909090;stroke-width:1 "
+          transform="rotate( 120  150 250)"></line>
+
+    <line id="podzialka" x1="45" y1="250" x2="255" y2="250" style="stroke:#909090;stroke-width:1"
+          transform="rotate( 150  150 250)"></line>
+
+
+    <circle cx="150" cy="250" r="102" style="stroke: none; fill: #e0e0e0;"></circle>
+    <circle cx="150" cy="250" r="5" style="stroke: none; fill: #000000;"></circle>
+
+    <!--<circle class="spot" cx="65" cy="250" r="13" ></circle>-->
+    <!--<circle class="spot" cx="235" cy="250" r="13" ></circle>-->
+    <!--<circle class="spot" cx="150" cy="335" r="13" ></circle>-->
+    <!--<circle class="spot" cx="150" cy="165" r="13" ></circle>-->
+
+
+    <!--<text class="a01" id="12" onclick="okno()" x="137" y="171">12</text>-->
+    <!--<text class="a01" id="3" onclick="okno()" x="229" y="257">3</text>-->
+    <!--<text class="a01" id="4" onclick="okno()" x="218" y="300">4</text>-->
+    <!--<text class="a01" id="5" onclick="okno()" x="187" y="330">5</text>-->
+    <!--<text class="a01" id="6" onclick="okno()" x="144" y="343">6</text>-->
+    <!--<text class="a01" id="7" onclick="okno()" x="102" y="330">7</text>-->
+    <!--<text class="a01" id="8" onclick="okno()" x="70" y="300">8</text>-->
+    <!--<text class="a01" id="9" onclick="okno()" x="59" y="257">9</text>-->
+    <!--<text class="a01" id="10" onclick="okno()" x="65" y="215">10</text>-->
+    <!--<text class="a01" id="11" onclick="okno()" x="97" y="183">11</text>-->
+    <!--<text class="a01" id="1" onclick="okno()" x="187" y="183">1</text>-->
+    <!--<text class="a01" id="2" onclick="okno()" x="218" y="215">2</text>-->
+
+    /* spoty godzin *********************************************/
+
+    <circle class="spot" id="0" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 0  150 250)"></circle>
+
+    <circle class="spot" id="1" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 6  150 250)"></circle>
+    <circle class="spot" id="2" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 12  150 250)"></circle>
+    <circle class="spot" id="3" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 18  150 250)"></circle>
+    <circle class="spot" id="4" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 24  150 250)"></circle>
+    <circle class="spot" id="5" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 30  150 250)"></circle>
+    <circle class="spot" id="6" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 36  150 250)"></circle>
+    <circle class="spot" id="7" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 42  150 250)"></circle>
+    <circle class="spot" id="8" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 48  150 250)"></circle>
+    <circle class="spot" id="9" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 54  150 250)"></circle>
+    <circle class="spot" id="10" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 60  150 250)"></circle>
+    <circle class="spot" id="11" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 66  150 250)"></circle>
+    <circle class="spot" id="12" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 72  150 250)"></circle>
+    <circle class="spot" id="13" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 78  150 250)"></circle>
+    <circle class="spot" id="14" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 84  150 250)"></circle>
+    <circle class="spot" id="15" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 90  150 250)"></circle>
+    <circle class="spot" id="16" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 96  150 250)"></circle>
+    <circle class="spot" id="17" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 102  150 250)"></circle>
+    <circle class="spot" id="18" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 108  150 250)"></circle>
+    <circle class="spot" id="19" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 114  150 250)"></circle>
+    <circle class="spot" id="20" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 120  150 250)"></circle>
+    <circle class="spot" id="21" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 126  150 250)"></circle>
+    <circle class="spot" id="22" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 132  150 250)"></circle>
+    <circle class="spot" id="23" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 138  150 250)"></circle>
+    <circle class="spot" id="24" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 144  150 250)"></circle>
+    <circle class="spot" id="25" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 150  150 250)"></circle>
+    <circle class="spot" id="26" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 156  150 250)"></circle>
+    <circle class="spot" id="27" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 162  150 250)"></circle>
+    <circle class="spot" id="28" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 168  150 250)"></circle>
+    <circle class="spot" id="29" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 174  150 250)"></circle>
+    <circle class="spot" id="30" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 180  150 250)"></circle>
+    <circle class="spot" id="31" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 186  150 250)"></circle>
+    <circle class="spot" id="32" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 192  150 250)"></circle>
+    <circle class="spot" id="33" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 198  150 250)"></circle>
+    <circle class="spot" id="34" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 204  150 250)"></circle>
+    <circle class="spot" id="35" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 210  150 250)"></circle>
+    <circle class="spot" id="36" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 216  150 250)"></circle>
+    <circle class="spot" id="37" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 222  150 250)"></circle>
+    <circle class="spot" id="38" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 228  150 250)"></circle>
+    <circle class="spot" id="39" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 234  150 250)"></circle>
+    <circle class="spot" id="40" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 240  150 250)"></circle>
+    <circle class="spot" id="41" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 246  150 250)"></circle>
+    <circle class="spot" id="42" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 252  150 250)"></circle>
+    <circle class="spot" id="43" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 258  150 250)"></circle>
+    <circle class="spot" id="44" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 264  150 250)"></circle>
+    <circle class="spot" id="45" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 270  150 250)"></circle>
+    <circle class="spot" id="46" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 276  150 250)"></circle>
+    <circle class="spot" id="47" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 282  150 250)"></circle>
+    <circle class="spot" id="48" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 288  150 250)"></circle>
+    <circle class="spot" id="49" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 294  150 250)"></circle>
+    <circle class="spot" id="50" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 300  150 250)"></circle>
+    <circle class="spot" id="51" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 306  150 250)"></circle>
+    <circle class="spot" id="52" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 312  150 250)"></circle>
+    <circle class="spot" id="53" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 318  150 250)"></circle>
+    <circle class="spot" id="54" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 324  150 250)"></circle>
+    <circle class="spot" id="55" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 330  150 250)"></circle>
+    <circle class="spot" id="56" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 336  150 250)"></circle>
+    <circle class="spot" id="57" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 342  150 250)"></circle>
+    <circle class="spot" id="58" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 348  150 250)"></circle>
+    <circle class="spot" id="59" onclick="okno()" cx="150" cy="155" r="5" transform="rotate( 354  150 250)"></circle>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="a01">
+        A
+    </div>
+
+
+    <p id="godzina">x</p>
+
+
+    <script>
+
+        console.log("skahfgASFGAFGJKAG");
+
+
+        var i;
+        for (i = 0; i < 13; i++) {
+            console.log("--> " + i);
+        }
+
+
+        function okno() {
+            var x = document.getElementById("godzina");
+            x.innerHTML = (window.event.target.id);
+//    alert(event.srcElement.id);
+            console.log(window.event.target.id)
+        }
+
+
+    </script>
+
+</body>
+</html>
