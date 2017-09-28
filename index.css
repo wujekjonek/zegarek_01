@@ -6,6 +6,9 @@
     border-radius: 20px;
     font-family: sans-serif;
     font-size: 20px;
+
+
+
 }
 
 
@@ -17,6 +20,27 @@
 
 
 }
+
+
+
+.pmam{
+    fill: white;
+    font-family: sans-serif;
+    font-size: 25px;
+    opacity: 0.5;
+}
+
+
+
+
+.pmamAktywny{
+    fill: white;
+    font-family: sans-serif;
+    font-size: 25px;
+    /*opacity: 0.5;*/
+    cursor: pointer;
+}
+
 
 
 .godzinaNieAktywna {
@@ -34,6 +58,9 @@
     fill: #6197cd;
     opacity: 0.6;
     /*transition: fill .7s ease;*/
+    cursor: pointer;
+
+
 }
 
 .spot {
@@ -41,6 +68,9 @@
     /*fill: #79e06e;*/
     opacity: 0.4;
     /*transition: fill .7s ease;*/
+
+    cursor: pointer;
+
 }
 
 .spot:hover {
@@ -65,12 +95,12 @@
 
 
 h1 {
-    color: blue;
+    color: #adff81;
     font-family: verdana;
-    font-size: 100%;
+    font-size: 200%;
 }
 
-div {
+divnieaktywny {
     width: 200px;
     height: 100px;
     border: 1px solid black;

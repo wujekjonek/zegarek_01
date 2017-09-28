@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title> <!--tytuł strony-->
+    <style type="text/css">
+        .a01 {
+            height: 200px;
+            width: 200px;
+            background-color: #86e68b;
+            display: inline-block;
+        }
+
+        #a01 {
+            height: 200px;
+            width: 200px;
+            background-color: lightblue;
+            display: inline-block;
+        }
+
+        h1 {
+            color: blue;
+            font-family: verdana;
+            font-size: 300%;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+<div style="" id="page1">
+    First Page Contents
+
+    <div class="a01">
+        <H1> AAAAA </H1>
+    </div>
+
+
+</div>
+
+<div style="display:none" id="page2">
+    Second Page Contents
+
+
+    <div id="a01">
+        <H1> HELLO </H1>
+    </div>
+
+
+</div>
+
+
+<script>
+    console.log("skahfgASFGAFGJKAG");
+
+
+    let button4 = document.createElement('button');
+    button4.textContent = "4";
+    button4.value = "4"
+    button4.className = "button";
+    button4.onclick = function() {
+        console.log("pika, pika ");
+
+        document.getElementById('page1').style.display = "none";
+        document.getElementById('page2').style.display = "";
+
+    }
+    document.body.appendChild(button4);
+
+
+    var $prehashval = "";
+    function loop()
+    {
+        if (location.hash.slice(1)!=$prehashval)
+            hashChanged();
+
+        $prehashval = location.hash.slice(1);
+        setTimeout(loop(), 100);
+    }
+    function hashChanged()
+    {
+        var $output;
+        switch (location.hash.slice(1))
+        {
+            case "page1":
+                document.getElementById('page1').style.display = "";
+                document.getElementById('page2').style.display = "none";
+                break;
+            case "page2":
+                document.getElementById('page1').style.display = "none";
+                document.getElementById('page2').style.display = "";
+                break;
+            default:
+                $output = location.hash.slice(1);
+        }
+    }
+
+
+
+</script>
+</body>
+</html>
