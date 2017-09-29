@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title> <!--tytuł strony-->
+    <style type="text/css"></style>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+
+<div id="zegar"></div>
+
+
+<script>
+    console.log("skahfgASFGAFGJKAG");
+
+    //    obrót to i * 6 !!
+
+
+    function spoty() {
+
+        var div = document.getElementById("zegar");
+        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("width", "300");
+        svg.setAttribute("height", "400");
+        div.appendChild(svg);
+
+        for (var i = 0; i < 60; i++) {
+            console.log("petla: " + i);
+            var svgNS = "http://www.w3.org/2000/svg";
+            var myCircle = document.createElementNS(svgNS, "circle");
+
+
+
+            if ( i==5 ||i==10|| i == 25){
+                console.log("-->>: " + i);
+                myCircle.setAttribute("class", "aktywnyspot");
+            }else{
+                console.log("else -->>: " + i);
+                myCircle.setAttribute("class", "spot");
+            }
+
+
+
+//            myCircle.setAttribute("class", "spot");
+            myCircle.setAttribute("id", i);
+            myCircle.setAttribute("onclick", "pokazKoniec()");
+            myCircle.setAttribute("onmouseover", "ustawianieMinuty()");
+            myCircle.setAttribute("onmouseleave", "ukryjKreske()");
+            myCircle.setAttribute("cx", 150);
+            myCircle.setAttribute("cy", 155);
+            myCircle.setAttribute("r", 5);
+            myCircle.setAttribute("fill", "lightblue");
+            myCircle.setAttribute("transform", "rotate( " + i * 6 + "  150 250)");
+            svg.appendChild(myCircle);
+        }
+    }
+
+
+    spoty();
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

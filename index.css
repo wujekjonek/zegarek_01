@@ -82,7 +82,7 @@
 .line {
     stroke: #6197cd;
     /*stroke: #79e06e;*/
-    /*opacity: 0.4;*/
+    opacity: 0.4;
     /*transition: fill .7s ease;*/
     stroke-width: 2px;
 }
