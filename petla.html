@@ -16,50 +16,181 @@
 <script>
     console.log("skahfgASFGAFGJKAG");
 
-    //    obrót to i * 6 !!
+    //
+    //        function spotyGodzin() {
+    //            var div = document.getElementById("zegar");
+    //            var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    //            svg.setAttribute("width", "300");
+    //            svg.setAttribute("height", "400");
+    //            div.appendChild(svg);
+    //
+    //            for (var i = 0; i < 60; i++) {
+    //                console.log("petla: " + i);
+    //                var svgNS = "http://www.w3.org/2000/svg";
+    //                var myCircle = document.createElementNS(svgNS, "circle");
+    //                if (i == 0 || i == 5 || i == 10 || i == 15 || i == 20 || i == 25 || i == 30 || i == 35 || i == 40 || i == 45 || i == 50 || i == 55) {
+    //                    console.log("-->>: " + i);
+    //                    myCircle.setAttribute("class", "aktywnyspot");
+    //                } else {
+    //                    console.log("else -->>: " + i);
+    //                    myCircle.setAttribute("class", "spot");
+    //                }
+    //                myCircle.setAttribute("id", i);
+    //                myCircle.setAttribute("onclick", "pokazKoniec()");
+    //                myCircle.setAttribute("onmouseover", "ustawianieMinuty()");
+    //                myCircle.setAttribute("onmouseleave", "ukryjKreske()");
+    //                myCircle.setAttribute("cx", 150);
+    //                myCircle.setAttribute("cy", 155);
+    //                myCircle.setAttribute("r", 5);
+    //                myCircle.setAttribute("fill", "lightblue");
+    //                myCircle.setAttribute("transform", "rotate( " + i * 6 + "  150 250)");
+    //                svg.appendChild(myCircle);
+    //            }
+    //        }
+    //
+    //
+    //        spotyGodzin();
 
 
-    function spoty() {
-
-        var div = document.getElementById("zegar");
-        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svg.setAttribute("width", "300");
-        svg.setAttribute("height", "400");
-        div.appendChild(svg);
-
-        for (var i = 0; i < 60; i++) {
-            console.log("petla: " + i);
-            var svgNS = "http://www.w3.org/2000/svg";
-            var myCircle = document.createElementNS(svgNS, "circle");
 
 
 
-            if ( i==5 ||i==10|| i == 25){
-                console.log("-->>: " + i);
-                myCircle.setAttribute("class", "aktywnyspot");
-            }else{
-                console.log("else -->>: " + i);
-                myCircle.setAttribute("class", "spot");
+
+
+
+
+
+            function spotyGodzin() {
+                var div = document.getElementById("zegar");
+                var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                svg.setAttribute("width", "300");
+                svg.setAttribute("height", "400");
+                div.appendChild(svg);
+
+                for (var i = 1; i < 13; i++) {
+                    console.log("petla: " + i);
+                    var svgNS = "http://www.w3.org/2000/svg";
+                    var myCircle = document.createElementNS(svgNS, "circle");
+//                    if (i == 0 || i == 5 || i == 10 || i == 15 || i == 20 || i == 25 || i == 30 || i == 35 || i == 40 || i == 45 || i == 50 || i == 55) {
+//                        console.log("-->>: " + i);
+//                        myCircle.setAttribute("class", "aktywnyspot");
+//                    } else {
+//                        console.log("else -->>: " + i);
+//                        myCircle.setAttribute("class", "spot");
+//                    }
+                    myCircle.setAttribute("class", "spot");
+                    myCircle.setAttribute("id", i);
+                    myCircle.setAttribute("onclick", "pokazKoniec()");
+                    myCircle.setAttribute("onmouseover", "ustawianieMinuty()");
+                    myCircle.setAttribute("onmouseleave", "ukryjKreske()");
+                    myCircle.setAttribute("cx", 150);
+                    myCircle.setAttribute("cy", 165);
+                    myCircle.setAttribute("r", 13);
+                    myCircle.setAttribute("fill", "lightblue");
+                    myCircle.setAttribute("transform", "rotate( " + i * 30 + "  150 250)");
+                    svg.appendChild(myCircle);
+                }
             }
 
 
+            spotyGodzin();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //    function spotyGodzin() {
+//        var div = document.getElementById("zegar");
+//        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+//        var div = document.getElementById("zegar");
+//        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+//        svg.setAttribute("width", "300");
+//        svg.setAttribute("height", "400");
+//        div.appendChild(svg);
+//
+//
+//        var svgNS = "http://www.w3.org/2000/svg";
+//
+//        var myCircle = document.createElementNS(svgNS, "circle");
+//        for (var i = 0; i < 13; i++) {
+//            console.log("-->>: " + i);
 //            myCircle.setAttribute("class", "spot");
-            myCircle.setAttribute("id", i);
-            myCircle.setAttribute("onclick", "pokazKoniec()");
-            myCircle.setAttribute("onmouseover", "ustawianieMinuty()");
-            myCircle.setAttribute("onmouseleave", "ukryjKreske()");
-            myCircle.setAttribute("cx", 150);
-            myCircle.setAttribute("cy", 155);
-            myCircle.setAttribute("r", 5);
-            myCircle.setAttribute("fill", "lightblue");
-            myCircle.setAttribute("transform", "rotate( " + i * 6 + "  150 250)");
-            svg.appendChild(myCircle);
-        }
-    }
+//            myCircle.setAttribute("id", i);
+//            myCircle.setAttribute("onclick", "pokazPanelMinut()");
+//            myCircle.setAttribute("onmouseover", "ustawianieGodziny()");
+//            myCircle.setAttribute("onmouseleave", "ukryjKreske()");
+//            myCircle.setAttribute("cx", 150);
+//            myCircle.setAttribute("cy", 165);
+//            myCircle.setAttribute("r", 13);
+//            myCircle.setAttribute("fill", "lightblue");
+//            myCircle.setAttribute("transform", "rotate( " + i * 6 + "  150 250)");
+//            svg.appendChild(myCircle);
+//        }
+//    }
 
 
-    spoty();
+    /*
+
+        <circle class="spot" id="01" onclick="pokazPanelMinut()" onmouseover="ustawianieGodziny()"
+        onmouseleave="ukryjKreske()" cx="150" cy="165"
+        r="13" transform="rotate( 30  150 250)"></circle>
+            <circle class="spot" id="02" onclick="pokazPanelMinut()" onmouseover="ustawianieGodziny()"
+        onmouseleave="ukryjKreske()" cx="150" cy="165"
+        r="13" transform="rotate( 60  150 250)"></circle>
+            <circle class="spot" id="03" onclick="pokazPanelMinut()" onmouseover="ustawianieGodziny()"
+        onmouseleave="ukryjKreske()" cx="150" cy="165"
+        r="13" transform="rotate( 90  150 250)"></circle>
+            <circle class="spot" id="04" onclick="pokazPanelMinut()" onmouseover="ustawianieGodziny()"
+        onmouseleave="ukryjKreske()" cx="150" cy="165"
+        r="13" transform="rotate(120  150 250)"></circle>
+            <circle class="spot" id="05" onclick="pokazPanelMinut()" onmouseover="ustawianieGodziny()"
+        onmouseleave="ukryjKreske()" cx="150" cy="165"
+        r="13" transform="rotate(150  150 250)"></circle>
+            <circle class="spot" id="06" onclick="pokazPanelMinut()" onmouseover="ustawianieGodziny()"
+        onmouseleave="ukryjKreske()" cx="150" cy="165"
+        r="13" transform="rotate(180  150 250)"></circle>
+            <circle class="spot" id="07" onclick="pokazPanelMinut()" onmouseover="ustawianieGodziny()"
+        onmouseleave="ukryjKreske()" cx="150" cy="165"
+        r="13" transform="rotate(210  150 250)"></circle>
+            <circle class="spot" id="08" onclick="pokazPanelMinut()" onmouseover="ustawianieGodziny()"
+        onmouseleave="ukryjKreske()" cx="150" cy="165"
+        r="13" transform="rotate(240  150 250)"></circle>
+            <circle class="spot" id="09" onclick="pokazPanelMinut()" onmouseover="ustawianieGodziny()"
+        onmouseleave="ukryjKreske()" cx="150" cy="165"
+        r="13" transform="rotate(270  150 250)"></circle>
+            <circle class="spot" id="10" onclick="pokazPanelMinut()" onmouseover="ustawianieGodziny()"
+        onmouseleave="ukryjKreske()" cx="150" cy="165"
+        r="13" transform="rotate(300  150 250)"></circle>
+            <circle class="spot" id="11" onclick="pokazPanelMinut()" onmouseover="ustawianieGodziny()"
+        onmouseleave="ukryjKreske()" cx="150" cy="165"
+        r="13" transform="rotate(330  150 250)"></circle>
+            <circle class="spot" id="12" onclick="pokazPanelMinut()" onmouseover="ustawianieGodziny()"
+        onmouseleave="ukryjKreske()" cx="150" cy="165"
+        r="13" transform="rotate( 0  150 250)"></circle>
+
+
+    */
+
+
+
 
 
 </script>

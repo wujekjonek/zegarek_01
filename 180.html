@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title> <!--tytuł strony-->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<!--    /**********************************************************************************************************************/    -->
+<!--    /**************** strona do ustawiania godziny  /    -->
+<!--    /**********************************************/    -->
+
+<div style="" id="stronaDoUstawianiaGodzin">
+
+    <svg width="180" height="180"  id="panelGodzin">
+
+        <!--<rect x="0" y="0" width="300" height="400" style="stroke: black; fill: #ffffff;"></rect>-->
+        <!--<rect x="0" y="40" width="300" height="80" style="stroke: none; fill: #6197cd;"></rect>-->
+
+
+
+        <!--<circle id="tarcza" cx="150" cy="250" r="105" style="stroke: none; fill: #e0e0e0;"></circle>-->
+
+
+
+
+        <!--<text x="15" y="28" fill=#6197cd font-family="sans-serif" font-size="20px" font-weight="bold" ;>Ustaw czas        </text>-->
+
+
+        <!--    /**********************************************/    -->
+        <!--    /**************** godziny na niebieskim pasku  /    -->
+        <!--    /**********************************************/    -->
+
+        <!--<text class="godzinaAktywna" id="godzina" x="63" y="95"></text>-->
+        <!--<text class="godzinaAktywna" id="" x="110" y="95">:</text>-->
+        <!--<text class="godzinaNieAktywna" id="minuty" x="125" y="95"></text>-->
+        <!--<text class="pmam" id="AmPm" x="190" y="95"></text>-->
+
+
+        <!--    /**********************************************/    -->
+        <!--    /**************** godziny cyfry                /    -->
+        <!--    /**********************************************/    -->
+
+
+        <!--<text class="a01" id="1"   x="187" y="183">1</text>-->
+        <!--<text class="a01" id="2"   x="218" y="215">2</text>-->
+        <!--<text class="a01" id="3"   x="229" y="257">3</text>-->
+        <!--<text class="a01" id="4"   x="218" y="300">4</text>-->
+        <!--<text class="a01" id="5"   x="187" y="330">5</text>-->
+        <!--<text class="a01" id="6"   x="144" y="343">6</text>-->
+        <!--<text class="a01" id="7"   x="102" y="330">7</text>-->
+        <!--<text class="a01" id="8"   x="70" y="300">8</text>-->
+        <!--<text class="a01" id="9"   x="59" y="257">9</text>-->
+        <!--<text class="a01" id="10"  x="65" y="215">10</text>-->
+        <!--<text class="a01" id="11"  x="97" y="183">11</text>-->
+        <!--<text class="a01" id="12"  x="137" y="171">12</text>-->
+
+
+
+
+        <!--<line class="line" id="kreskaGodziny" x1="145" y1="250" x2="78" y2="250"></line>-->
+
+        <circle class="aktywnyspot" id="godzinyspot" cx="10" cy="90" r="10"></circle>
+
+
+        <circle class="aktywnyspot" cx="90" cy="90" r="5"></circle>
+
+
+    </svg>
+<br>
+
+    <text class="godzinaAktywna" id="godzina" x="63" y="95"></text>
+    <text class="godzinaAktywna" id="" x="110" y="95">:</text>
+    <text class="godzinaNieAktywna" id="minuty" x="125" y="95"></text>
+    <text class="pmam" id="AmPm" x="190" y="95"></text>
+
+</div>
+
+
+<!--    /**********************************************************************************************************************/    -->
+<!--    /**************** strona do ustawiania minuty  /    -->
+<!--    /**********************************************/    -->
+
+
+<div style="display:none" id="stronaDoUstawianiaMinut">
+
+
+    <svg width="180" height="180" id="panelMinut">
+
+        <!--<rect x="0" y="0" width="300" height="400" style="stroke: black; fill: #ffffff;"></rect>-->
+        <!--<rect x="0" y="40" width="300" height="80" style="stroke: none; fill: #6197cd;"></rect>-->
+        <!--<circle cx="150" cy="250" r="105" style="stroke: none; fill: #e0e0e0;"></circle>-->
+
+
+        <!--<text x="15" y="28" fill=#6197cd font-family="sans-serif" font-size="20px" font-weight="bold" ;>Ustaw czas       </text>-->
+        <!--<text class="godzinaNieAktywna" id="godzina2" x="63" y="95">##</text>-->
+        <!--<text class="godzinaAktywna" id="" x="110" y="95">:</text>-->
+        <!--<text class="godzinaAktywna" id="minuty2" x="125" y="95">@@</text>-->
+        <!--<text id="" x="190" onclick="zmianaAmPm()" y="95" fill="white" font-family="sans-serif" font-size="25px">PM</text>-->
+
+
+        <text class="pmamAktywny" id="AmPm2" x="190" y="95" onclick="zmianaAmPm()">**</text>
+
+
+        <!--    /**********************************************/    -->
+        <!--    /**************** szara podziałka             */    -->
+        <!--    /**********************************************/    -->
+
+
+        <circle class="aktywnyspot" cx="90" cy="90" r="5"></circle>
+
+
+        <!--    /**********************************************/    -->
+        <!--    /**************** spoty minut                 */    -->
+        <!--    /**********************************************/    -->
+
+
+    </svg>
+    <br>
+    <text class="godzinaNieAktywna" id="godzina2" x="63" y="95">##</text>
+    <text class="godzinaAktywna" id="" x="110" y="95">:</text>
+    <text class="godzinaAktywna" id="minuty2" x="125" y="95">@@</text>
+</div>
+
+
+<div style="display:none" id="stronaKoncowa">
+    <H1> Koniec :)</H1>
+    <br>
+    ustawiona godzina to:
+    <br>
+    <text class="" id="godzina3">##</text>
+    <br> <br> <br>
+    ustawiona minuta to
+    <br>
+    <text class="" id="minuty3">##</text>
+</div>
+<script src="180.js"></script>
+</body>
+</html>

@@ -7,10 +7,7 @@
     font-family: sans-serif;
     font-size: 20px;
 
-
-
 }
-
 
 .godzinaAktywna {
 
@@ -18,30 +15,22 @@
     font-family: sans-serif;
     font-size: 40px;
 
-
 }
 
-
-
-.pmam{
+.pmam {
     fill: white;
     font-family: sans-serif;
     font-size: 25px;
     opacity: 0.5;
 }
 
-
-
-
-.pmamAktywny{
+.pmamAktywny {
     fill: white;
     font-family: sans-serif;
     font-size: 25px;
     /*opacity: 0.5;*/
     cursor: pointer;
 }
-
-
 
 .godzinaNieAktywna {
 
@@ -52,14 +41,12 @@
 
 }
 
-
 .aktywnyspot {
     /*fill: #e0e0e0;*/
     fill: #6197cd;
     opacity: 0.6;
     /*transition: fill .7s ease;*/
     cursor: pointer;
-
 
 }
 
@@ -78,7 +65,6 @@
     opacity: 0.6;
 }
 
-
 .line {
     stroke: #6197cd;
     /*stroke: #79e06e;*/
@@ -91,8 +77,6 @@
     stroke: #6197cd;
     opacity: 0.6;
 }
-
-
 
 h1 {
     color: #adff81;
