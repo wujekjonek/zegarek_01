@@ -75,6 +75,9 @@ function ktoraGodzina() {
     kreskaGodzin();
     wyswietlGodziny();
     spotyGodzin();
+
+     poczatkowaGodzina();
+
     var n = new Date().getHours();
     var m = new Date().getMinutes();
     document.getElementById("godzina").innerHTML = n;
@@ -278,6 +281,34 @@ function wyswietlGodziny() {
 
         svg.appendChild(myText);
     }
+
+
+    function poczatkowaGodzina() {
+        var svg = document.getElementById("panelGodzin");
+        var svgNS = "http://www.w3.org/2000/svg";
+        var myCircle = document.createElementNS(svgNS, "circle");
+        myCircle.setAttribute("class", "aktywnyspot2");
+        myCircle.setAttribute("id", "godzinyspot");
+        myCircle.setAttribute("cx", 10);
+        myCircle.setAttribute("cy", 90);
+        myCircle.setAttribute("r", 10);
+        myCircle.setAttribute("fill", "red");
+        svg.appendChild(myCircle);
+
+
+    // <circle class="aktywnyspot2"
+    //     id="godzinyspot"
+    //     fill="red"
+    //     cx="10"
+    //     cy="90"
+    //     r="10"
+    //         ></circle>
+
+
+
+
+    }
+
 
 
 }
