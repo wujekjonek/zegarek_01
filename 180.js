@@ -4,8 +4,12 @@ var ustawionaGodzina;
 var ustawionaMinuta;
 var poradnia;
 
-var srednica = 100;
-var srednicaSpotGodzin = srednica * 0.06;
+var srednica = 250;
+var promienSpotGodzin = srednica * 0.04;
+var promienSpotMinut = srednica * 0.02;
+var odKrawedzi = (srednica * 0.02);
+
+
 
 
 function zmianaAmPm() {
@@ -14,7 +18,7 @@ function zmianaAmPm() {
         document.getElementById("AmPm").innerHTML = "PM";
         console.log(parseInt(ustawionaGodzina) + 12);
         ustawionaGodzina = ustawionaGodzina + 12;
-        document.getElementById("godzina").innerHTML = (parseInt(ustawionaGodzina) );
+        document.getElementById("godzina").innerHTML = (parseInt(ustawionaGodzina));
 
 
     } else if (document.getElementById("AmPm").innerHTML == "PM") {
@@ -55,15 +59,13 @@ function ustawianieGodziny() {
 
 function ustawianieMinuty() {
     var y = document.getElementById("minuty2");
-
-
     y.innerHTML = (window.event.target.id);
     console.log(window.event.target.id);
     kreskaMinuty.setAttribute("transform", "rotate(" + ((window.event.target.id * 6) + 90) + "," + srednica / 2 + " ," + srednica / 2 + "   )");
-
-
     ustawionaMinuta = window.event.target.id;
 }
+
+
 
 
 function ukryjKreske() {
@@ -80,7 +82,7 @@ function ktoraGodzina() {
     // wyswietlGodziny();
     spotyGodzin();
 
-    pokaampm();
+    // pokaampm();
     srodekTarczyGodzin();
 
     var n = new Date().getHours();
@@ -89,8 +91,8 @@ function ktoraGodzina() {
     document.getElementById("minuty").innerHTML = m;
 
 
-    kreskaGodziny.setAttribute("transform", "rotate(" + ((n * 30) + 90) + "," + srednica / 2 + "," + srednica / 2 + ")");
-    godzinyspot.setAttribute("transform", "rotate(" + ((n * 30) + 90) + "," + srednica / 2 + "," + srednica / 2 + ")");
+    kreskaGodziny.setAttribute("transform", "rotate(" + ((n * 30) + 90) + "," + srednica * 0.5 + "," + srednica * 0.5 + ")");
+    godzinyspot.setAttribute("transform", "rotate(" + ((n * 30) + 90) + "," + srednica * 0.5 + "," + srednica * 0.5 + ")");
     // console.log("enka to: " + n);
 
 
@@ -136,12 +138,12 @@ function pokazKoniec() {
 function spotyMinut() {
     var svg = document.getElementById("panelMinut");
     for (var i = 0; i < 60; i++) {
-
         var svgNS = "http://www.w3.org/2000/svg";
         var myCircle = document.createElementNS(svgNS, "circle");
-        if (i == 0 || i == 5 || i == 10 || i == 15 || i == 20 || i == 25 || i == 30 || i == 35 || i == 40 || i == 45 || i == 50 || i == 55) {
+        // if (i == 0 || i == 5 || i == 10 || i == 15 || i == 20 || i == 25 || i == 30 || i == 35 || i == 40 || i == 45 || i == 50 || i == 55) {
+        if (i % 5 == 0) {
 //                console.log("-->>: " + i);
-            myCircle.setAttribute("class", "aktywnyspot");
+            myCircle.setAttribute("class", "aktywnyspotszary");
         } else {
 //                console.log("else -->>: " + i);
             myCircle.setAttribute("class", "spot");
@@ -149,10 +151,10 @@ function spotyMinut() {
         myCircle.setAttribute("id", i);
         myCircle.setAttribute("onclick", "pokazKoniec()");
         myCircle.setAttribute("onmouseover", "ustawianieMinuty()");
-        myCircle.setAttribute("onmouseleave", "ukryjKreske()");
-        myCircle.setAttribute("cx", srednica * 0.05);
+        // myCircle.setAttribute("onmouseleave", "ukryjKreske()");
+        myCircle.setAttribute("cx", (odKrawedzi + (promienSpotMinut)));
         myCircle.setAttribute("cy", srednica * 0.5);
-        myCircle.setAttribute("r", srednica * 0.02);
+        myCircle.setAttribute("r", promienSpotMinut);
         myCircle.setAttribute("fill", "lightblue");
         myCircle.setAttribute("transform", "rotate( " + ((i * 6) + 90) + "," + srednica * 0.5 + " ," + srednica * 0.5 + ")");
         svg.appendChild(myCircle);
@@ -161,22 +163,21 @@ function spotyMinut() {
 
 
 function spotyGodzin() {
-
     var svg = document.getElementById("panelGodzin");
     for (var i = 1; i < 13; i++) {
 //            console.log("petla: " + i);
         var svgNS = "http://www.w3.org/2000/svg";
         var myCircle = document.createElementNS(svgNS, "circle");
 
-        myCircle.setAttribute("class", "spot");
+        myCircle.setAttribute("class", "aktywnyspotszary");
         myCircle.setAttribute("id", i);
         myCircle.setAttribute("onclick", "pokazPanelMinut()");
         myCircle.setAttribute("onmouseover", "ustawianieGodziny()");
         myCircle.setAttribute("onmouseleave", "ukryjKreske()");
-        myCircle.setAttribute("cx", srednica * 0.5);
-        myCircle.setAttribute("cy", srednica * 0.1);
-        myCircle.setAttribute("r", srednicaSpotGodzin);
-        myCircle.setAttribute("transform", "rotate( " + i * 30 + "," + srednica / 2 + " ," + srednica / 2 + ")");
+        myCircle.setAttribute("cx", (odKrawedzi + (promienSpotGodzin)));
+        myCircle.setAttribute("cy", srednica * 0.5);
+        myCircle.setAttribute("r", promienSpotGodzin);
+        myCircle.setAttribute("transform", "rotate( " + ((i * 30) + 90) + "," + srednica / 2 + " ," + srednica / 2 + ")");
         svg.appendChild(myCircle);
     }
 }
@@ -190,11 +191,10 @@ function tarczaGodziny() {
     myCircle.setAttribute("cx", srednica * 0.5);
     myCircle.setAttribute("cy", srednica * 0.5);
     myCircle.setAttribute("r", srednica * 0.5);
-    myCircle.setAttribute("opacity", 0.5);
+    // myCircle.setAttribute("opacity", 0.5);
     myCircle.setAttribute("fill", "#e0e0e0");
     // myCircle.setAttribute("fill", "red");
     svg.appendChild(myCircle);
-
 }
 
 
@@ -209,23 +209,6 @@ function tarczaMinuty() {
     myCircle.setAttribute("fill", "#e0e0e0");
     // myCircle.setAttribute("fill", "green");
     svg.appendChild(myCircle);
-
-}
-
-
-function kreskaMinut() {
-
-    var x2 = (srednica * 0.02) * 3;
-    var svg = document.getElementById("panelMinut");
-    var svgNS = "http://www.w3.org/2000/svg";
-    var myLine = document.createElementNS(svgNS, "line");
-    myLine.setAttribute("class", "line");
-    myLine.setAttribute("id", "kreskaMinuty");
-    myLine.setAttribute("x1", srednica * 0.5);
-    myLine.setAttribute("y1", srednica * 0.5);
-    myLine.setAttribute("x2", x2);
-    myLine.setAttribute("y2", srednica * 0.5);
-    svg.appendChild(myLine);
 }
 
 
@@ -242,30 +225,27 @@ function wyswietlGodziny() {
         myText.setAttribute("x", 10);
         myText.setAttribute("y", 100);
         myText.textContent = i;
-        myText.setAttribute("transform", "rotate( " + (i + 3) * 30 + "," + srednica * 0.5 + " ," + srednica * 0.5 + ")");
-
-
+        myText.setAttribute("transform", "rotate( " + (i + 1) * 30 + "," + srednica * 0.5 + " ," + srednica * 0.5 + ")");
         svg.appendChild(myText);
     }
 }
+
 
 function poczatkowaGodzina() {
     var svg = document.getElementById("panelGodzin");
     var svgNS = "http://www.w3.org/2000/svg";
     var myCircle = document.createElementNS(svgNS, "circle");
-    myCircle.setAttribute("class", "aktywnyspot");
+    myCircle.setAttribute("class", "kolorek");
     myCircle.setAttribute("id", "godzinyspot");
-    myCircle.setAttribute("cx", srednica * 0.1);
+    myCircle.setAttribute("cx", (odKrawedzi + (promienSpotGodzin)));
     myCircle.setAttribute("cy", srednica * 0.5);
-    myCircle.setAttribute("r", srednicaSpotGodzin);
+    myCircle.setAttribute("r", promienSpotGodzin);
     // myCircle.setAttribute("fill", "red");
     svg.appendChild(myCircle);
-
 }
 
-function kreskaGodzin() {
 
-    var x22 = (srednica * 0.075) * 2;
+function kreskaGodzin() {
     var svg = document.getElementById("panelGodzin");
     var svgNS = "http://www.w3.org/2000/svg";
     var myLine = document.createElementNS(svgNS, "line");
@@ -273,7 +253,21 @@ function kreskaGodzin() {
     myLine.setAttribute("id", "kreskaGodziny");
     myLine.setAttribute("x1", (srednica * 0.5) - (srednica * 0.04));
     myLine.setAttribute("y1", srednica * 0.5);
-    myLine.setAttribute("x2", x22);
+    myLine.setAttribute("x2", (odKrawedzi + (promienSpotGodzin * 2)));
+    myLine.setAttribute("y2", srednica * 0.5);
+    svg.appendChild(myLine);
+}
+
+
+function kreskaMinut() {
+    var svg = document.getElementById("panelMinut");
+    var svgNS = "http://www.w3.org/2000/svg";
+    var myLine = document.createElementNS(svgNS, "line");
+    myLine.setAttribute("class", "line");
+    myLine.setAttribute("id", "kreskaMinuty");
+    myLine.setAttribute("x1", srednica * 0.5);
+    myLine.setAttribute("y1", srednica * 0.5);
+    myLine.setAttribute("x2", (odKrawedzi + (promienSpotMinut * 2)));
     myLine.setAttribute("y2", srednica * 0.5);
     svg.appendChild(myLine);
 }
@@ -286,8 +280,8 @@ function srodekTarczyGodzin() {
     myCircle.setAttribute("class", "aktywnyspot");
     myCircle.setAttribute("cx", srednica * 0.5);
     myCircle.setAttribute("cy", srednica * 0.5);
-    myCircle.setAttribute("r", srednica * 0.04);
-    myCircle.setAttribute("onclick", "zmianaAmPm()");
+    myCircle.setAttribute("r", srednica * 0.02);
+    // myCircle.setAttribute("onclick", "zmianaAmPm()");
     svg.appendChild(myCircle);
 }
 
@@ -299,7 +293,7 @@ function srodekTarczyMinut() {
     myCircle.setAttribute("class", "aktywnyspot");
     myCircle.setAttribute("cx", srednica * 0.5);
     myCircle.setAttribute("cy", srednica * 0.5);
-    myCircle.setAttribute("r", srednica * 0.04);
+    myCircle.setAttribute("r", srednica * 0.02);
     // myCircle.setAttribute("onclick", "zmianaAmPm()");
     myCircle.setAttribute("fill", "green");
     svg.appendChild(myCircle);
@@ -307,8 +301,6 @@ function srodekTarczyMinut() {
 
 
 function svgGodziny() {
-
-
     var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("id", "panelGodzin");
     svg.setAttribute("width", srednica);
@@ -316,9 +308,6 @@ function svgGodziny() {
     // svg.setAttribute("fill", "red");
     var div = document.getElementById("stronaDoUstawianiaGodzin");
     div.appendChild(svg);
-
-// <svg width="180" height="180"  id="panelGodzin">
-
 }
 
 
@@ -348,8 +337,8 @@ function pokaampm() {
 
     myText.setAttribute("class", "pmam");
     myText.setAttribute("id", "AmPm");
-    myText.setAttribute("x", (srednica * 0.5)-(srednica * 0.03));
-    myText.setAttribute("y", (srednica * 0.5)+(srednica * 0.015));
+    myText.setAttribute("x", (srednica * 0.5) - (srednica * 0.03));
+    myText.setAttribute("y", (srednica * 0.5) + (srednica * 0.015));
     myText.textContent = "@@";
     svg.appendChild(myText);
 

@@ -50,6 +50,41 @@
 
 }
 
+
+
+.kolorek {
+    /*fill: #e0e0e0;*/
+    fill: green;
+    opacity: 0.6;
+    /*transition: fill .7s ease;*/
+    cursor: pointer;
+
+}
+
+
+.aktywnyspotszary {
+    /*fill: #e0e0e0;*/
+    fill: #757875;
+    opacity: 0.6;
+    /*transition: fill .7s ease;*/
+    cursor: pointer;
+
+}
+
+
+.aktywnyspotszary:hover {
+    /*fill: #e0e0e0;*/
+    fill: #6197cd;
+    opacity: 0.6;
+    /*transition: fill .7s ease;*/
+    cursor: pointer;
+
+}
+
+
+
+
+
 .spot {
     fill: #e0e0e0;
     /*fill: #79e06e;*/
