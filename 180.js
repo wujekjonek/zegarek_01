@@ -4,7 +4,7 @@ var ustawionaGodzina;
 var ustawionaMinuta;
 var poradnia;
 
-var srednica = 500;
+var srednica = 100;
 var srednicaSpotGodzin = srednica * 0.06;
 
 
@@ -79,8 +79,9 @@ function ktoraGodzina() {
     poczatkowaGodzina();
     // wyswietlGodziny();
     spotyGodzin();
-    srodekTarczyGodzin();
+
     pokaampm();
+    srodekTarczyGodzin();
 
     var n = new Date().getHours();
     var m = new Date().getMinutes();
@@ -347,8 +348,8 @@ function pokaampm() {
 
     myText.setAttribute("class", "pmam");
     myText.setAttribute("id", "AmPm");
-    myText.setAttribute("x", srednica * 0.5);
-    myText.setAttribute("y", srednica * 0.5);
+    myText.setAttribute("x", (srednica * 0.5)-(srednica * 0.03));
+    myText.setAttribute("y", (srednica * 0.5)+(srednica * 0.015));
     myText.textContent = "@@";
     svg.appendChild(myText);
 
