@@ -1,166 +1,45 @@
-/*!*Klasa może być nadana wielu elementom, przez co np. będą miały one ujednolicony wygląd.*!*/
-
-/*.a01 {*/
-/*fill: #6e6e6e;*/
-/*!*display: inline-block;*!*/
-/*border-radius: 20px;*/
-/*font-family: sans-serif;*/
-/*font-size: 20px;*/
-
-/*}*/
 
 .tloTarcza {
-
     fill: #e4e4e4;
-
 }
 
-/*.godzinaAktywna {*/
+.ampmspot {
 
-/*fill: white;*/
-/*font-family: sans-serif;*/
-/*font-size: 40px;*/
+    fill: #6197cd;
+    cursor: pointer;
+}
 
-/*}*/
+.ampmtext {
+    fill: white;
+    cursor: pointer;
+    font-family: sans-serif;
+}
 
-/*.pmam {*/
-/*fill: black;*/
-/*font-family: sans-serif;*/
-/*font-size: 20px;*/
-/*opacity: 0.5;*/
-/*}*/
-
-/*.pmamAktywny {*/
-/*fill: white;*/
-/*font-family: sans-serif;*/
-/*font-size: 25px;*/
-/*!*opacity: 0.5;*!*/
-/*cursor: pointer;*/
-/*}*/
-
-/*.godzinaNieAktywna {*/
-
-/*fill: white;*/
-/*font-family: sans-serif;*/
-/*font-size: 40px;*/
-/*opacity: 0.5;*/
-
-/*}*/
-
-
-
-/*.kolorek {*/
-/*!*fill: #e0e0e0;*!*/
-/*fill: green;*/
-/*opacity: 0.6;*/
-/*!*transition: fill .7s ease;*!*/
-/*cursor: pointer;*/
-
-/*}*/
-
-
-
-
-
-.srodkowuspot {
-/*fill: #e0e0e0;*/
+.srodkowyspot {
 fill: #6197cd;
-/*opacity: 0.6;*/
-/*transition: fill .7s ease;*/
-/*cursor: pointer;*/
-
 }
 
 
 .aktywnyspot {
-    /*fill: #e0e0e0;*/
     fill: #6197cd;
-    /*opacity: 0.6;*/
-    /*transition: fill .7s ease;*/
     cursor: pointer;
-
 }
-
-
-
-
-
 
 .aktywnyspotszary {
-
     fill: #bebebe;
     opacity: 0.6;
-    transition: fill .7s ease;
     cursor: pointer;
 }
-
 
 .aktywnyspotszaryciemny {
-
     fill: #6b6b6b;
     opacity: 0.6;
-    transition: fill .7s ease;
     cursor: pointer;
 }
-
-
-
-
-/*.aktywnyspotszary1111111111111111111111111:hover {*/
-/*!*fill: #e0e0e0;*!*/
-/*fill: #6197cd;*/
-/*opacity: 0.6;*/
-/*!*transition: fill .7s ease;*!*/
-/*cursor: pointer;*/
-
-/*}*/
-
-/*.spot {*/
-/*fill: #e0e0e0;*/
-/*!*fill: #79e06e;*!*/
-/*opacity: 0.4;*/
-/*!*transition: fill .7s ease;*!*/
-
-/*cursor: pointer;*/
-
-/*}*/
-
-/*.spot:hover {*/
-/*fill: #6197cd;*/
-/*opacity: 0.6;*/
-/*}*/
 
 .line {
 stroke: #6197cd;
-/*stroke: #79e06e;*/
-/*opacity: 0.4;*/
-/*transition: fill .7s ease;*/
 stroke-width: 2px;
 }
 
-/*.line2:hover {*/
-/*stroke: #6197cd;*/
-/*opacity: 0.6;*/
-/*}*/
 
-/*h1 {*/
-/*color: #adff81;*/
-/*font-family: verdana;*/
-/*font-size: 200%;*/
-/*}*/
-
-/*divnieaktywny {*/
-/*width: 200px;*/
-/*height: 100px;*/
-/*border: 1px solid black;*/
-/*}*/
-
-/*#circle {*/
-/*border: 1px solid red;*/
-/*height: 20px;*/
-/*width: 20px;*/
-/*-webkit-border-radius: 40px;*/
-/*-moz-border-radius: 40px;*/
-/*border-radius: 40px;*/
-
-/*}*/
