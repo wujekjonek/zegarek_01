@@ -88,11 +88,23 @@ fill: #6197cd;
 
 .aktywnyspotszary {
 
-    fill: #b7bab7;
+    fill: #bebebe;
     opacity: 0.6;
     transition: fill .7s ease;
     cursor: pointer;
 }
+
+
+.aktywnyspotszaryciemny {
+
+    fill: #6b6b6b;
+    opacity: 0.6;
+    transition: fill .7s ease;
+    cursor: pointer;
+}
+
+
+
 
 /*.aktywnyspotszary1111111111111111111111111:hover {*/
 /*!*fill: #e0e0e0;*!*/
