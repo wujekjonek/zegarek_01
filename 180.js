@@ -59,14 +59,11 @@ function ustawianieGodziny() {
     if (document.getElementById("AmPm").innerHTML == "PM") {
         x.innerHTML = (parseInt(window.event.target.id) + 12);
         ustawionaGodzina = parseInt(window.event.target.id) + 12;
-        console.log(parseInt(window.event.target.id) + 12);
-        console.log("ustawianieGodziny()    n > 12");
+
     }
     else {
         x.innerHTML = (parseInt(window.event.target.id));
         ustawionaGodzina = parseInt(window.event.target.id);
-        console.log(parseInt(window.event.target.id));
-        console.log("ustawianieGodziny()    else");
     }
 }
 
