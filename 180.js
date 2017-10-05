@@ -1,8 +1,9 @@
-var ustawionaGodzina;
-var ustawionaMinuta;
-var poradnia;
+// var ustawionaGodzina;
+// var ustawionaMinuta;
+// var poradnia;
+// var srednica = 250;
 
-var srednica = 250;
+
 // var promienSpotGodzin = (srednica * 0.04);
 // var promienSpotMinut = (srednica * 0.02);
 // var odKrawedzi = (srednica * 0.02);
@@ -21,16 +22,21 @@ function svgGodziny() {
 
 
 function ktoraGodzina() {
+
+    srednica = 200;
+    poradnia = "";
+    divGodziny();
+    svgGodziny();
     tarczaGodziny();
     spotyGodzin();
     srodekTarczyGodzin();
     kreskaGodzin();
     poczatkowaGodzina();
     guzikTest();
-
     var n = new Date().getHours();
     var m = new Date().getMinutes();
     ustawionaGodzina = n;
+
     document.getElementById("godzina").innerHTML = n;
     document.getElementById("minuty").innerHTML = m;
     kreskaGodziny.setAttribute("transform", "rotate(" + ((n * 30) + 90) + "," + srednica * 0.5 + "," + srednica * 0.5 + ")");
@@ -39,13 +45,11 @@ function ktoraGodzina() {
     if (n <= 12) {
         poradnia = "AM";
         document.getElementById("AmPm").innerHTML = poradnia;
-        console.log("@@@@@@@   n <= 12");
     }
 
     else {
         poradnia = "PM";
         document.getElementById("AmPm").innerHTML = poradnia;
-        console.log("@@@@@@@   else");
     }
 }
 
@@ -69,9 +73,9 @@ function ustawianieGodziny() {
 
 
 function ustawianieMinuty() {
+
     var y = document.getElementById("minuty2");
     y.innerHTML = (window.event.target.id);
-    console.log(window.event.target.id);
     kreskaMinuty.setAttribute("transform", "rotate(" + ((window.event.target.id * 6) + 90) + "," + srednica / 2 + " ," + srednica / 2 + "   )");
     minutyspot1.setAttribute("transform", "rotate(" + ((window.event.target.id * 6) + 90) + "," + srednica * 0.5 + "," + srednica * 0.5 + ")");
     ustawionaMinuta = window.event.target.id;
@@ -90,11 +94,9 @@ function pokazPanelMinut() {
     document.getElementById('stronaDoUstawianiaGodzin').style.display = "none";
     document.getElementById('stronaDoUstawianiaMinut').style.display = "";
     document.getElementById("godzina2").innerHTML = ustawionaGodzina;
-    // document.getElementById("AmPm2").innerHTML = poradnia;
     document.getElementById("minuty2").innerHTML = new Date().getMinutes();
     kreskaMinuty.setAttribute("transform", "rotate(" + ((new Date().getMinutes() * 6) + 90) + "," + srednica * 0.5 + "," + srednica * 0.5 + ")");
     minutyspot1.setAttribute("transform", "rotate(" + ((new Date().getMinutes() * 6) + 90) + "," + srednica * 0.5 + "," + srednica * 0.5 + ")");
-
 
 
 }
@@ -102,8 +104,8 @@ function pokazPanelMinut() {
 
 function pokazKoniec() {
 
-    // document.getElementById('stronaDoUstawianiaMinut').style.display = "none";
-    document.getElementById('pokaz_zegarek').style.display = "none";
+    koncoweDane();
+
     document.getElementById('stronaKoncowa').style.display = "";
     document.getElementById("godzina3").innerHTML = ustawionaGodzina;
     document.getElementById("minuty3").innerHTML = ustawionaMinuta;
@@ -195,7 +197,6 @@ function poczatkowaMinuta() {
     var svg = document.getElementById("panelMinut");
     var svgNS = "http://www.w3.org/2000/svg";
     var myCircle = document.createElementNS(svgNS, "circle");
-    console.log("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
     myCircle.setAttribute("class", "aktywnyspot");
     myCircle.setAttribute("id", "minutyspot1");
     myCircle.setAttribute("onclick", "pokazKoniec()");
@@ -310,7 +311,7 @@ function guzikTest() {
 function divGodziny() {
     var myDiv = document.createElement('div');
     myDiv.id = 'stronaDoUstawianiaGodzin';
-    document.getElementById("pokaz_zegarek").appendChild(myDiv);
+    document.body.appendChild(myDiv);
 
     var x = document.createElement('text');
     x.setAttribute("class", "godzinaAktywna");
@@ -329,38 +330,57 @@ function divGodziny() {
 }
 
 
-
 function divMinuty() {
 
     document.getElementById("stronaDoUstawianiaGodzin").style.display = "none";
 
 
-
-
-
     var myDiv = document.createElement('div');
     myDiv.id = 'stronaDoUstawianiaMinut';
-    document.getElementById("pokaz_zegarek").appendChild(myDiv);
+    document.body.appendChild(myDiv);
 
     var x = document.createElement('text');
     x.setAttribute("class", "godzinaNieAktywna");
     x.setAttribute("id", "godzina2");
-    document.getElementById("pokaz_zegarek").appendChild(x);
+    document.getElementById("stronaDoUstawianiaMinut").appendChild(x);
 
     var y = document.createElement('text');
     y.setAttribute("class", "godzinaAktywna");
     y.innerHTML = ":";
-    document.getElementById("pokaz_zegarek").appendChild(y);
+    document.getElementById("stronaDoUstawianiaMinut").appendChild(y);
 
     var z = document.createElement('text');
     z.setAttribute("class", "godzinaNieAktywna");
     z.setAttribute("id", "minuty2");
-    document.getElementById("pokaz_zegarek").appendChild(z);
+    document.getElementById("stronaDoUstawianiaMinut").appendChild(z);
 }
 
 
-divGodziny();
-svgGodziny();
+function koncoweDane() {
+
+    document.getElementById("stronaDoUstawianiaMinut").style.display = "none";
+
+    var myDiv = document.createElement('div');
+    myDiv.id = 'stronaKoncowa';
+    document.body.appendChild(myDiv);
+
+    var x = document.createElement('text');
+    x.setAttribute("id", "godzina3");
+    x.innerHTML = "x!";
+    document.getElementById("stronaKoncowa").appendChild(x);
+
+
+    var y = document.createElement('text');
+    y.innerHTML = ":";
+    document.getElementById("stronaKoncowa").appendChild(y);
+
+    var z = document.createElement('text');
+    z.setAttribute("id", "minuty3");
+    z.innerHTML = "y!";
+    document.getElementById("stronaKoncowa").appendChild(z);
+}
+
+
 ktoraGodzina();
 
 
