@@ -37,8 +37,8 @@ function ktoraGodzina() {
     var m = new Date().getMinutes();
     ustawionaGodzina = n;
 
-    document.getElementById("godzina").innerHTML = n;
-    document.getElementById("minuty").innerHTML = m;
+    document.getElementById("godzina").innerHTML = n.toString();
+    document.getElementById("minuty").innerHTML = m.toString();
     kreskaGodziny.setAttribute("transform", "rotate(" + ((n * 30) + 90) + "," + srednica * 0.5 + "," + srednica * 0.5 + ")");
     godzinyspot.setAttribute("transform", "rotate(" + ((n * 30) + 90) + "," + srednica * 0.5 + "," + srednica * 0.5 + ")");
 
@@ -56,11 +56,10 @@ function ktoraGodzina() {
 
 function ustawianieGodziny() {
     var x = document.getElementById("godzina");
-    kreskaGodziny.style.display = "block";
-    kreskaGodziny.setAttribute("transform", "rotate(" + ((window.event.target.id * 30) + 90) + "," + srednica / 2 + " ," + srednica / 2 + "   )");
-    godzinyspot.setAttribute("transform", "rotate(" + ((window.event.target.id * 30) + 90) + "," + srednica / 2 + " ," + srednica / 2 + "   )");
+    kreskaGodziny.setAttribute("transform", "rotate(" + ((window.event.target.id * 30) + 90) + "," + srednica / 2 + "," + srednica / 2 + ")");
+    godzinyspot.setAttribute("transform", "rotate(" + ((window.event.target.id * 30) + 90) + "," + srednica / 2 + "," + srednica / 2 + ")");
 
-    if (document.getElementById("AmPm").innerHTML == "PM") {
+    if (document.getElementById("AmPm").innerHTML === "PM") {
         x.innerHTML = (parseInt(window.event.target.id) + 12);
         ustawionaGodzina = parseInt(window.event.target.id) + 12;
 
@@ -76,7 +75,8 @@ function ustawianieMinuty() {
 
     var y = document.getElementById("minuty2");
     y.innerHTML = (window.event.target.id);
-    kreskaMinuty.setAttribute("transform", "rotate(" + ((window.event.target.id * 6) + 90) + "," + srednica / 2 + " ," + srednica / 2 + "   )");
+
+    kreskaMinuty.setAttribute("transform", "rotate(" + ((window.event.target.id * 6) + 90) + "," + srednica / 2 + "," + srednica / 2 + ")");
     minutyspot1.setAttribute("transform", "rotate(" + ((window.event.target.id * 6) + 90) + "," + srednica * 0.5 + "," + srednica * 0.5 + ")");
     ustawionaMinuta = window.event.target.id;
 }
@@ -91,8 +91,6 @@ function pokazPanelMinut() {
     srodekTarczyMinut();
     kreskaMinut();
     poczatkowaMinuta();
-    document.getElementById('stronaDoUstawianiaGodzin').style.display = "none";
-    document.getElementById('stronaDoUstawianiaMinut').style.display = "";
     document.getElementById("godzina2").innerHTML = ustawionaGodzina;
     document.getElementById("minuty2").innerHTML = (new Date().getMinutes().toString());
     kreskaMinuty.setAttribute("transform", "rotate(" + ((new Date().getMinutes() * 6) + 90) + "," + srednica * 0.5 + "," + srednica * 0.5 + ")");
@@ -105,8 +103,6 @@ function pokazPanelMinut() {
 function pokazKoniec() {
 
     koncoweDane();
-
-    document.getElementById('stronaKoncowa').style.display = "";
     document.getElementById("godzina3").innerHTML = ustawionaGodzina;
     document.getElementById("minuty3").innerHTML = ustawionaMinuta;
 }
@@ -117,14 +113,14 @@ function spotyMinut() {
     for (var i = 0; i < 60; i++) {
         var svgNS = "http://www.w3.org/2000/svg";
         var myCircle = document.createElementNS(svgNS, "circle");
-        if (i % 5 == 0) {
+        if (i % 5 === 0) {
             myCircle.setAttribute("class", "aktywnyspotszaryciemny");
             myCircle.setAttribute("r", (srednica * 0.02).toString());
         } else {
             myCircle.setAttribute("class", "aktywnyspotszary");
             myCircle.setAttribute("r", ((srednica * 0.02) / 2).toString());
         }
-        myCircle.setAttribute("id", i);
+        myCircle.setAttribute("id", i.toString());
         myCircle.setAttribute("onclick", "pokazKoniec()");
         myCircle.setAttribute("onmouseover", "ustawianieMinuty()");
         myCircle.setAttribute("cx", ((srednica * 0.02) + ((srednica * 0.02))).toString());
@@ -142,7 +138,7 @@ function spotyGodzin() {
         var svgNS = "http://www.w3.org/2000/svg";
         var myCircle = document.createElementNS(svgNS, "circle");
         myCircle.setAttribute("class", "aktywnyspotszary");
-        myCircle.setAttribute("id", i);
+        myCircle.setAttribute("id", i.toString());
         myCircle.setAttribute("onclick", "pokazPanelMinut()");
         myCircle.setAttribute("onmouseover", "ustawianieGodziny()");
         myCircle.setAttribute("cx", ((srednica * 0.02) + ((srednica * 0.04))).toString());
@@ -254,7 +250,6 @@ function srodekTarczyMinut() {
     myCircle.setAttribute("cx", (srednica * 0.5).toString());
     myCircle.setAttribute("cy", (srednica * 0.5).toString());
     myCircle.setAttribute("r", (srednica * 0.01).toString());
-    // myCircle.setAttribute("onclick", "zmianaAmPm()");
     svg.appendChild(myCircle);
 }
 
@@ -270,15 +265,15 @@ function svgMinuty() {
 
 
 function zmianaAmPm() {
-    if (document.getElementById("AmPm").innerHTML == "AM") {
+    if (document.getElementById("AmPm").innerHTML === "AM") {
         document.getElementById("AmPm").innerHTML = "PM";
         ustawionaGodzina = (parseInt(ustawionaGodzina) + 12);
-        document.getElementById("godzina").innerHTML = (parseInt(ustawionaGodzina));
+        document.getElementById("godzina").innerHTML = ((ustawionaGodzina));
 
-    } else if (document.getElementById("AmPm").innerHTML == "PM") {
+    } else if (document.getElementById("AmPm").innerHTML === "PM") {
         document.getElementById("AmPm").innerHTML = "AM";
         ustawionaGodzina = (parseInt(ustawionaGodzina) - 12);
-        document.getElementById("godzina").innerHTML = (parseInt(ustawionaGodzina));
+        document.getElementById("godzina").innerHTML = ((ustawionaGodzina));
     }
     else {
     }
@@ -308,21 +303,21 @@ function guzikTest() {
 
 
 function divGodziny() {
-    var myDiv = document.createElement('div');
-    myDiv.id = 'stronaDoUstawianiaGodzin';
+    var myDiv = document.createElement("div");
+    myDiv.id = "stronaDoUstawianiaGodzin";
     document.body.appendChild(myDiv);
 
-    var x = document.createElement('text');
+    var x = document.createElement("text");
     x.setAttribute("class", "godzinaAktywna");
     x.setAttribute("id", "godzina");
     document.getElementById("stronaDoUstawianiaGodzin").appendChild(x);
 
-    var y = document.createElement('text');
+    var y = document.createElement("text");
     y.setAttribute("class", "godzinaAktywna");
     y.innerHTML = ":";
     document.getElementById("stronaDoUstawianiaGodzin").appendChild(y);
 
-    var z = document.createElement('text');
+    var z = document.createElement("text");
     z.setAttribute("class", "godzinaNieAktywna");
     z.setAttribute("id", "minuty");
     document.getElementById("stronaDoUstawianiaGodzin").appendChild(z);
@@ -333,22 +328,21 @@ function divMinuty() {
 
     document.getElementById("stronaDoUstawianiaGodzin").style.display = "none";
 
-
-    var myDiv = document.createElement('div');
-    myDiv.id = 'stronaDoUstawianiaMinut';
+    var myDiv = document.createElement("div");
+    myDiv.id = "stronaDoUstawianiaMinut";
     document.body.appendChild(myDiv);
 
-    var x = document.createElement('text');
+    var x = document.createElement("text");
     x.setAttribute("class", "godzinaNieAktywna");
     x.setAttribute("id", "godzina2");
     document.getElementById("stronaDoUstawianiaMinut").appendChild(x);
 
-    var y = document.createElement('text');
+    var y = document.createElement("text");
     y.setAttribute("class", "godzinaAktywna");
     y.innerHTML = ":";
     document.getElementById("stronaDoUstawianiaMinut").appendChild(y);
 
-    var z = document.createElement('text');
+    var z = document.createElement("text");
     z.setAttribute("class", "godzinaNieAktywna");
     z.setAttribute("id", "minuty2");
     document.getElementById("stronaDoUstawianiaMinut").appendChild(z);
@@ -359,21 +353,20 @@ function koncoweDane() {
 
     document.getElementById("stronaDoUstawianiaMinut").style.display = "none";
 
-    var myDiv = document.createElement('div');
-    myDiv.id = 'stronaKoncowa';
+    var myDiv = document.createElement("div");
+    myDiv.id = "stronaKoncowa";
     document.body.appendChild(myDiv);
 
-    var x = document.createElement('text');
+    var x = document.createElement("text");
     x.setAttribute("id", "godzina3");
     x.innerHTML = "x!";
     document.getElementById("stronaKoncowa").appendChild(x);
 
-
-    var y = document.createElement('text');
+    var y = document.createElement("text");
     y.innerHTML = ":";
     document.getElementById("stronaKoncowa").appendChild(y);
 
-    var z = document.createElement('text');
+    var z = document.createElement("text");
     z.setAttribute("id", "minuty3");
     z.innerHTML = "y!";
     document.getElementById("stronaKoncowa").appendChild(z);
