@@ -108,6 +108,12 @@ function pokazKoniec() {
 }
 
 
+<!--    /**********************************************/    -->
+<!--    /**************** spoty minut                 */    -->
+<!--    /**********************************************/    -->
+
+
+
 function spotyMinut() {
     var svg = document.getElementById("panelMinut");
     for (var i = 0; i < 60; i++) {

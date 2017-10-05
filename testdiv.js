@@ -19,7 +19,7 @@
     x.innerHTML = "xxxxxxxxxxxxxxxxxxx";
     document.getElementById("stronaKoncowa").appendChild(x);
 
-    console.log("koniec -dddd");
+
 
     var y = document.createElement('text');
     y.setAttribute("id", "minuty3");
