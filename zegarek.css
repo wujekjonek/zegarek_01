@@ -1,0 +1,157 @@
+
+.tloTarcza {
+    fill: #e8e6e3;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.ampmtext {
+    fill: white;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+.srodkowyspot {
+fill: #6197cd;
+}
+
+
+.aktywnyspot {
+    fill: #6197cd;
+    cursor: pointer;
+}
+
+.aktywnyspotszary {
+    fill: #d0ccc8;
+    /*opacity: 0.6;*/
+    cursor: pointer;
+}
+
+.aktywnyspotszaryciemny {
+    fill: #9d958d;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.line {
+stroke: #6197cd;
+stroke-width: 2px;
+}
+
+/*********************** z qnt ************************************/
+
+/* theme modern-rock -----------------------------------------------*/
+#dvp[theme=mrc] .page{
+    background:#2b2927;
+}
+#dvp[theme=mrc] .gridl{  /*grid lines*/
+    stroke:#dbdbdb;
+}
+#dvp[theme=mrc] .printgridl{  /*grid lines*/
+    stroke: #dbdbdb;
+}
+#dvp[theme=mrc] .rpo{
+    stroke:#1c1b1a;
+    fill:#373534;
+}
+#dvp[theme=mrc] .pln{
+    stroke:#1c1b1a;
+}
+#dvp[theme=mrc] .rla{
+    stroke:#1c1b1a;
+    fill:#3d3b3a;
+}
+#dvp[theme=mrc] .lln{
+    stroke: #1c1b1a;
+}
+
+#dvp[theme=mrc] .ta{
+    color:#fff6ea;
+    stroke:#565452;
+    stroke-width: 0;
+    fill:#565452;
+    background: linear-gradient(#565452, #565452);
+}
+#dvp[theme=mrc] .su{
+    color:#fff6ea;
+    stroke:#464443;
+    stroke-width: 0 !important;
+    fill:#464443;
+    background: linear-gradient(#464443, #464443);
+}
+#dvp[theme=mrc] .sg{
+    color:#fff6ea;
+    stroke-width: 0 !important;
+    stroke:#0469a2;
+    fill:#0469a2;
+    background: linear-gradient(#0469a2, #0469a2);
+}
+
+#dvp[theme=mrc] .se{
+    color:#fff6ea;
+    stroke:#4860a0;
+    stroke-width: 0 !important;
+    fill:#4860a0;
+    background: linear-gradient(#4860a0, #4860a0);
+}
+
+#dvp[theme=mrc] g.tpm.se[iint]>circle{
+    stroke-width: 1.5 !important;
+}
+
+#dvp[theme=mrc] .ga{
+    color:#fff6ea;
+    stroke:#6a2f66;
+    stroke-width: 0 !important;
+    fill:#6a2f66;
+    background: linear-gradient(#6a2f66, #6a2f66);
+}
+#dvp[theme=mrc] .es{
+    color:#fff6ea;
+    stroke:#469220;
+    stroke-width: 0 !important;
+    fill:#469220;
+    background: linear-gradient(#469220, #469220);
+}
+#dvp[theme=mrc] .ei, #dvp[theme=mrc] .eb{
+    color:#fff6ea;
+    stroke: #fff6ea;
+    stroke-width: 0 !important;
+    fill:#4860a0;
+    background: linear-gradient(#4860a0, #4860a0);
+}
+
+#dvp[theme=mrc] circle.eb:not([nint]):not([inner]){
+    stroke: #currentcolor;
+    stroke-width: 1 !important;
+}
+
+#dvp[theme=mrc] .ee{
+    color:#fff6ea;
+    stroke:#d11518;
+    stroke-width: 0 !important;
+    fill:#d11518;
+    background: linear-gradient(#d11518, #d11518);
+}
+#dvp[theme=mrc] .do, #dvp[theme=mrc] .ds{
+    color:#fff6ea;
+    stroke: currentcolor;
+    fill:#3d3b3a;
+}
+#dvp[theme=mrc] .an{
+    stroke:#fff6ea;
+    fill: #3d3b3a;
+}
+#dvp[theme=mrc] .gr{
+    stroke:#fff6ea;
+    fill: none;
+}
+#dvp[theme=mrc] .edge{
+    color:#393736;          /*marker color = lane fill*/
+    border-color:#fff6ea;   /*marker stroke color = stroke*/
+    stroke: #fff6ea;
+    fill: none;
+}
+#dvp[theme=mrc] .qdnpl, #dvp[theme=mrc] .qdnla, #dvp[theme=mrc] .qdn.st, #dvp[theme=mrc] .qdn.art, #dvp[theme=mrc] .qdn.ge, #dvp[theme=mrc] .qdn.ed{
+    fill:#e3dbd0;
+}
